@@ -9,6 +9,8 @@ import About from './pages/About/About';
 //components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Register from './pages/register/Register';
+import Login from './pages/Login/Login';
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
         <div className="container">
           <Routes>
               <Route path='/' element={ <Home /> } />
-              <Route path='/about' element={ <About/>} />
+              <Route path='/about' element={ <About /> } />
+              <Route path='/login' element={ <Login /> } />
+              <Route path='/register' element={ <Register /> } />
           </Routes>
         </div>
         <Footer />
