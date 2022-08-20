@@ -36,19 +36,20 @@ nav button:hover {
 /*Estilo formulários*/
 
 form {
-  max-width: 40%;
-  margin: 0 auto;
+  max-width: 30%;
+  margin: 4rem auto;
 }
 
 label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1px;
+  margin-bottom: 1.5rem;
 }
 label span {
   margin-bottom: .3em;
   font-weight: bold;
   text-align: left;
+  font-size: 0.9rem;
 }
 
 input,
@@ -64,8 +65,8 @@ textarea {
   color: #fff;
   text-align: center;
   cursor: pointer;
-  border-radius: 10px;
-  width: 120px;
+  border-radius: 2rem;
+  width: 15rem;
   font-weight: bold;
   border: none;
   padding: 10px 15px;

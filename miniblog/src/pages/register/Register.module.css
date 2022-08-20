@@ -1,6 +1,13 @@
-.register {
+.Register {
     text-align: center;
+    
+    
 }
-.register p {
+.Register p {
     color: #aaa;
+}
+.Register h1 {
+    margin: 4rem auto;
+   
+    font-size: 3rem;
 }
