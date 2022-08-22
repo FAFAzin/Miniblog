@@ -3,6 +3,8 @@ import styles from './Register.module.css';
 
 //hooks
 import {useState, useEffect} from 'react'
+//hooks 
+import { useAuthentication } from '../../Hooks/useAuthentication';
 
 const Register = () => {
     const [displayName, setDisplayName] = useState('');
@@ -11,8 +13,10 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
 
+    const {createUser, error: authError, loading} = useAuthentication();
+
     //função de submit
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
 
         setError('')
@@ -29,8 +33,21 @@ const Register = () => {
             return
         }
 
-        console.log(user)
+        const res = await createUser(user)
+
+        setDisplayName('');
+        setEmail('');
+        setPassword('');
+        setConfirmPassword('');
+
+
     };
+
+    useEffect(() => {
+        if(authError) {
+            setError(authError)
+        }
+    }, [authError])
     
   return (
     <div className={styles.Register}>
@@ -78,7 +95,9 @@ const Register = () => {
                 onChange={(e) => setConfirmPassword(e.target.value)}/>
             </label>
         {/*botão submit  */}
-            <button className='btn'>Cadastrar</button>
+            {!loading && <button className='btn'>Cadastrar</button>}
+            {loading && <button className='btn' disabled>Carregando...</button>}
+
             {error && <p className='error'>{error}</p>}
     </form>
         
