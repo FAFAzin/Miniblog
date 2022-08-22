@@ -1,20 +1,25 @@
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
-
+//css
 import './App.css';
+
+//Context
+import { AuthContextProvider } from './Context/AuthContext';
 
 //pages
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
+import Register from './pages/register/Register';
+import Login from './pages/Login/Login';
+
 
 //components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Register from './pages/register/Register';
-import Login from './pages/Login/Login';
 
 function App() {
   return (
     <div className="App">
+       <AuthContextProvider>
        <BrowserRouter>
         <Navbar/>
         <div className="container">
@@ -27,6 +32,7 @@ function App() {
         </div>
         <Footer />
        </BrowserRouter>
+       </AuthContextProvider>
     </div>
   );
 }
