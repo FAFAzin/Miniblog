@@ -9,6 +9,7 @@ import styles from './Navbar.module.css';
 const Navbar = () => {
 
     const {user} = useAuthValue();
+    const {logout} = useAuthentication();
 
   return (
     <nav className={styles.navbar}>
@@ -48,6 +49,11 @@ const Navbar = () => {
                 Dashboard</NavLink>
                 </li>
                     </>
+                )}
+                {user && (
+                    <li>
+                        <button onClick={logout}> Sair </button>
+                    </li>
                 )}
             </ul>
     </nav>
