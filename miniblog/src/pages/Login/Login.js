@@ -64,7 +64,7 @@ const Login = () => {
         </label>
 
         {/*botão submit  */}
-        {!loading && <button className='btn'>Cadastrar</button>}
+        {!loading && <button className='btn'>Entrar</button>}
         {loading && <button className='btn' disabled>Carregando...</button>}
 
         {error && <p className='error'>{error}</p>}
